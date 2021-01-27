@@ -11,5 +11,4 @@ elif n >= 100:
         thr = (n % 100) % 10
         if (one - two) == (two - thr):
             result += 1
-
 print(result)
