@@ -8,4 +8,5 @@ for x in range(n - 2):
             num = cards[x] + cards[y] + cards[z]
             if abs(m - num) < abs(m - result) and num <= m:
                 result = num
+
 print(result)
