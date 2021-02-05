@@ -1,12 +1,19 @@
-n = int(input())
-cards = [int(input()) for _ in range(n)]
+import heapq
 
-cards.sort()
+n = int(input())
+heap = []
+result = 0
+
+for _ in range(n):
+    heapq.heappush(heap, int(input()))
+
 if n == 1:
-    result = 0
-else:
-    result = cards[0] + cards[1]
-    for i in range(2, len(cards)):
-        result += result + cards[i]
+    print(0)
+    exit()
+
+while len(heap) > 1:
+    val = heapq.heappop(heap) + heapq.heappop(heap)
+    result += val
+    heapq.heappush(heap, val)
 
 print(result)

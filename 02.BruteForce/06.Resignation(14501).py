@@ -11,4 +11,5 @@ def process(x, res):
     cost = max(cost, process(x + schedule[x][0], res + schedule[x][1]), process(x + 1, res))
     return cost
 
+
 print(process(0, 0))
