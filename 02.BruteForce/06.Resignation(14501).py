@@ -7,7 +7,7 @@ def process(x, res):
     if x > n: return 0
     # x가 주어진 기간만큼일 경우 결과 반환
     if x == n: return res
-    # 지금까지의 수입과, x의 수익과, 그 다음 요소인 x+1 중 수입이 최대인 값을 저
+    # 지금까지의 수입과, x의 수익과, 그 다음 요소인 x+1 중 수입이 최대인 값을 cost에 저장
     cost = max(cost, process(x + schedule[x][0], res + schedule[x][1]), process(x + 1, res))
     return cost
 
