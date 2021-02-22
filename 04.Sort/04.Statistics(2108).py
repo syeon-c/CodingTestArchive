@@ -23,6 +23,7 @@ def getMid(list):
 def manyVal(list):
     if n == 1:
         return list[0]
+
     val = Counter(list).most_common(2)
     if val[0][1] == val[1][1]:
         return val[1][0]
