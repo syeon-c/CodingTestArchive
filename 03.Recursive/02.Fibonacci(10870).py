@@ -1,12 +1,7 @@
-n = int(input())
-Fibo = []
+import sys
 
-for i in range(n+1):
-    if i == 0:
-        Fibo.append(0)
-    elif i == 1 or i == 2:
-        Fibo.append(1)
-    else:
-        Fibo.append(Fibo[i-2]+Fibo[i-1])
+n = int(sys.stdin.readline())
 
-print(Fibo[n])
+fib_lambda = lambda n, x=0, y=1: x if n == 0 else fib_lambda(n - 1, y, x + y)
+
+print(fib_lambda(n))

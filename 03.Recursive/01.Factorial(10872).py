@@ -1,9 +1,12 @@
-n = int(input())
-result = 1
+import sys
+n = int(sys.stdin.readline())
 
-if n == 1 or n == 0:
-    print(result)
-else:
-    for i in range(1, n+1):
-        result *= i
-    print(result)
+
+def factorial_for(num):
+    res = 1
+    for i in range(1, num + 1):
+        res *= i
+    return res
+
+
+print(factorial_for(n))
