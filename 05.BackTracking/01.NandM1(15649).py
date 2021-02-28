@@ -2,25 +2,24 @@ import sys
 
 n, m = map(int, sys.stdin.readline().split())
 nums = [1 + i for i in range(n)]
-checkList = [False] * n
+visited = [False] * n
 result = []
 
 
 def DFS(x):
     if x == m:
         print(*result)
+        return
 
-    for i in range(n):
-        if checkList[i]:
-            continue
+    for i in range(len(visited)):
+        if not visited[i]:
+            visited[i] = True
+            result.append(nums[i])
 
-        result.append(nums[i])
-        checkList[i] = True
+            DFS(x + 1)
 
-        DFS(x + 1)
-
-        result.pop()
-        checkList[i] = False
+            visited[i] = False
+            result.pop()
 
 
 DFS(0)
