@@ -19,6 +19,6 @@ graph = [
     [1, 7]
 ]
 
-visited = [False] * 9
+visited = [False] * len(graph)
 
 dfs_stack(graph, 1, visited)
