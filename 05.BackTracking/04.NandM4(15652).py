@@ -15,9 +15,10 @@ def DFS(x):
             result.append(i + 1)
 
             DFS(x + 1)
-            visited[i] = True
 
+            visited[i] = True
             result.pop()
+
             for j in range(i + 1, n):
                 visited[j] = False
 

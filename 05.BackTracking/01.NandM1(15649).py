@@ -14,7 +14,7 @@ def DFS(x):
         if not visited[i]:
             visited[i] = True
             result.append(i + 1)
-
+            print(result)
             DFS(x + 1)
 
             visited[i] = False

@@ -14,7 +14,9 @@ def DFS(x):
         if not visited[i]:
             visited[i] = True
             result.append(i+1)
+
             DFS(x + 1)
+
             result.pop()
 
             for j in range(i+1, n):
