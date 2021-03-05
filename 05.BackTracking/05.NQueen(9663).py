@@ -20,7 +20,7 @@ def dfs(idx):
         global result
         result += 1
         return
-    # noinspection PyInterpreter
+
     for i in range(n):
         # 이미 사용한 열일 경우
         if visited[i]:
