@@ -3,8 +3,12 @@ import sys
 
 # 비용(S - T) + 비용(T - A) + 비용(T - B) 의 최솟값 구하
 def solution(n, s, a, b, fares):
-    answer = sys.maxsize
-    graph = [[0] * n for _ in range(n)]
+    INF = sys.maxsize
+    answer = INF
+    graph = [[INF] * n for _ in range(n)]
+
+    for i in range(n):
+        graph[i][i] = 0
     for i in fares:
         graph[i[0] - 1][i[1] - 1] = i[2]
         graph[i[1] - 1][i[0] - 1] = i[2]
