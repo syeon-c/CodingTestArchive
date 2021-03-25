@@ -56,6 +56,7 @@ def dijkstra(s):
 
 dijkstra(s)
 
+
 # 모든 노드로 가기 위한 최단 거리 출력
 for i in range(1, n + 1):
     # 도달 할 수 없는 경우, 무한 출력

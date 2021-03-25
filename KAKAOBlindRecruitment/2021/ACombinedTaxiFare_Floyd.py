@@ -19,7 +19,7 @@ def solution(n, s, a, b, fares):
 
     printGraph(graph)
 
-    # 비용(S - T) + 비용(T - A) + 비용(T - B) 의 최솟값 구하기
+    # 중간 지점 t를 경유하여 가는 요금의 최솟값 구하기
     for t in range(n):
         for i in range(n):
             for j in range(i, n):
@@ -28,7 +28,7 @@ def solution(n, s, a, b, fares):
                     graph[i][j] = graph[j][i] = temp
 
     printGraph(graph)
-
+    # 비용(S - T) + 비용(T - A) + 비용(T - B) 의 최솟값 구하기
     for t in range(n):
         temp = graph[s - 1][t] + graph[t][a - 1] + graph[t][b - 1]
         answer = min(answer, temp)

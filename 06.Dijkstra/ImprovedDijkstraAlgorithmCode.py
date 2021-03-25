@@ -14,6 +14,7 @@ distance = [INF] * (n + 1)
 for _ in range(m):
     a, b, c  = map(int, input().split())
     graph[a].append((b, c))
+    graph[b].append((a, c))
 
 
 def dijkstra(s):
@@ -33,7 +34,7 @@ def dijkstra(s):
             cost = dist + i[1]
             # 현재 노드 거쳐서, 다른 노드로 이동하는 거리 더 짧은 경우
             if cost < distance[i[0]]:
-                distance[i[10]] = cost
+                distance[i[0]] = cost
                 heapq.heappush(q, (cost, i[0]))
 
 
