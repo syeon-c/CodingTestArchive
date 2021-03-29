@@ -34,7 +34,7 @@ def solution(n, s, a, b, fares):
         return distance
 
     minFare = [[]] + [dijkstra(i) for i in range(1, n+1)]
-    # printGraph(minFare)
+    printGraph(minFare)
     answer = INF
     for i in range(1, n+1):
         answer = min(minFare[i][s] + minFare[i][a] + minFare[i][b], answer)

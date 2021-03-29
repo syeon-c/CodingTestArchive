@@ -9,6 +9,7 @@ def solution(orders, course):
         for order in orders:
             combi = combinations(sorted(order), i)
             temp += combi
+        print(temp)
         count = Counter(temp)
         if len(count) != 0 and max(count.values()) > 1:
             for j in count:
