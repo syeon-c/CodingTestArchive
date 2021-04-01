@@ -16,7 +16,6 @@ def dfs_search_parent(x):
         dfs_search_parent(x * 2 + 1)
 
 
-
 def dfs_search_right(x):
     if x > 7:
         return
@@ -24,6 +23,7 @@ def dfs_search_right(x):
         dfs_search_right(x * 2)
         dfs_search_right(x * 2 + 1)
         print(x, end=' ')
+
 
 dfs_search_left(1)
 print()
