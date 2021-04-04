@@ -1,13 +1,13 @@
 def dfs(i, sum):
     global result
-    if i == n + 1:
-        if sum < result:
+    if i > n:
+        if result < sum:
             result = sum
-        else:
-            #
-            if i + T[i] <= n + 1:
-                dfs(i + T[i], sum + P[i])
-            dfs(i + 1, sum)
+    else:
+        # 남은 일수를 넘지 않으면
+        if i + T[i] <= n + 1:
+            dfs(i + T[i], sum + P[i])
+        dfs(i + 1, sum)
 
 
 n = int(input())
