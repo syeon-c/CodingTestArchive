@@ -1,6 +1,7 @@
 n = int(input())
 schedule = [list(map(int, input().split())) for _ in range(n)]
 
+
 def process(x, res):
     cost = 0
     # x가 주어진 기간보다 클 경우(퇴사 후)
