@@ -1,19 +1,34 @@
 def solution(tickets):
     answer = []
-    dict = {}
+    routes = {}
 
-    for ticket in tickets:
-        if ticket[0] not in dict.keys():
-            dict[ticket[0]] = ticket[1]
+    for t in tickets:
+        if t[0] not in routes.keys():
+            routes[t[0]] = [t[1]]
         else:
-            dict[ticket[0]] += ticket[1]
+            routes[t[0]] += [t[1]]
 
+    print(routes)
 
+    for k in routes.keys():
+        routes[k].sort()
 
-    print(dict)
+    print(routes)
 
+    stack = ["ICN"]
+
+    while stack:
+        tmp = stack[-1]
+        if tmp not in routes or len(routes[tmp]) == 0:
+            answer.append(stack.pop())
+        else:
+            stack.append(routes[tmp][0])
+            routes[tmp] = routes[tmp][1:]
+    print(answer)
+
+    answer = answer[::-1]
     return answer
 
 
-tickets = [["ICN", "JFK"], ["HND", "IAD"], ["JFK", "HND"]]
+tickets = [["ICN", "SFO"], ["ICN", "ATL"], ["SFO", "ATL"], ["ATL", "ICN"], ["ATL", "SFO"]]
 print(solution(tickets))
