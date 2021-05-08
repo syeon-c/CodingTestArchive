@@ -10,6 +10,7 @@ def solution(gems):
             gems_dict[gems[end]] = 1
         else:
             gems_dict[gems[end]] += 1
+        print(gems_dict)
 
         end += 1
 
@@ -30,5 +31,5 @@ def solution(gems):
     return answer
 
 
-gems = ["AA", "AB", "AC", "AA", "AC"]
+gems = ["DIA", "RUBY", "RUBY", "DIA", "DIA", "EMERALD", "SAPPHIRE", "DIA"]
 print(solution(gems))
