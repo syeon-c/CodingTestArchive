@@ -3,7 +3,8 @@ def solution(i, score, time):
     if time > m:
         return
     if i == n:
-        result = score
+        if result < score:
+            result = score
     else:
         solution(i+1, score + score_list[i], time + time_list[i])
         solution(i+1, score, time)
