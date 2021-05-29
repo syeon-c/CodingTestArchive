@@ -5,6 +5,8 @@ def solution(clothes):
             dict[cloth[1]].append(cloth[0])
         else:
             dict[cloth[1]] = [cloth[0]]
+
+    #경우의 수 구하기
     answer = 1
     for val in dict.values():
         answer *= len(val) + 1
