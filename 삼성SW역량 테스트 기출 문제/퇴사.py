@@ -11,8 +11,8 @@ def dfs(i, sum, n, T, P):
 
 n = int(input())
 T = []
-P = []
-for i in range(n):
+P = [[] * n]
+for _ in range(n):
     t, p = map(int, input().split())
     T.append(t)
     P.append(p)
