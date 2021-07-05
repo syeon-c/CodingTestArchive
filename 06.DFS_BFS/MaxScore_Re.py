@@ -1,25 +1,25 @@
-def solution(i, score, time):
-    global result
+def dfs(i, score, time):
+    global res
     if time > m:
         return
     if i == n:
-        if result < score:
-            result = score
+        if res < score:
+            res = score
     else:
-        solution(i+1, score + score_list[i], time + time_list[i])
-        solution(i+1, score, time)
+        dfs(i + 1, score + SCORE[i], time + TIME[i])
+        dfs(i + 1, score, time)
 
 
 n, m = map(int, input().split())
-score_list = []
-time_list = []
 
-result = 0
+SCORE = []
+TIME = []
+res = int(-1e9)
 
-for i in range(n):
+for _ in range(n):
     score, time = map(int, input().split())
-    score_list.append(score)
-    time_list.append(time)
+    SCORE.append(score)
+    TIME.append(time)
 
-solution(0, 0, 0)
-print(result)
+dfs(0, 0, 0)
+print(res)
