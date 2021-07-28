@@ -1,5 +1,5 @@
-dx = [-1, 0, 1, 0]
-dy = [0, 1, 0, -1]
+dx = [-1, 1, 0, 0]
+dy = [0, 0, -1, 1]
 
 n, m = map(int, input().split())
 
@@ -16,9 +16,11 @@ while Q:
         x = tmp[0] + dx[i]
         y = tmp[1] + dy[i]
 
-        if 0 <= x < n and 0 <= y < m:
+        if (0 <= x < n) and (0 <= y < m):
             if visited[x][y] == 0 and maze[x][y] == 1:
-                visited[x][y] = visited[tmp[0]][tmp[1]] + 1
+                visited[x][y] = (visited[tmp[0]][tmp[1]]) + 1
+                print(visited)
                 Q.append((x, y))
+
 
 print(visited[n-1][m-1])
