@@ -7,11 +7,15 @@ def solution(board, moves):
                 continue
             else:
                 doll = board[j][i-1]
-                if len(res) > 0 and doll == res[-1]:
-                    res.pop()
-                    answer += 2
-                else:
-                    res.append(doll)
+                break
+
+        if board[j][i - 1] != 0:
+            if len(res) > 0 and doll == res[-1]:
+                res.pop()
+                board[j][i - 1] = 0
+                answer += 2
+            else:
+                res.append(doll)
                 board[j][i-1] = 0
 
     return answer
