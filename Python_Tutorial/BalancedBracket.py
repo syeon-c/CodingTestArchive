@@ -5,6 +5,7 @@ for _ in range(n):
     stack = []
     flag = True
     ps = sys.stdin.readline()
+
     for i in ps:
         if i == '(':
             stack.append(i)

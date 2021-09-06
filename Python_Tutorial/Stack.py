@@ -7,6 +7,7 @@ for i in range(n):
 
     if command[0] == "push":
         stack.append(command[1])
+
     elif command[0] == "pop":
         if len(stack) == 0:
             print(-1)
